@@ -1,0 +1,40 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: black !important;
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: black;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* estrelas fake */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  animation: moveStars 120s linear infinite;
+  opacity: 0.15;
+  z-index: -2;
+}
+
+@keyframes moveStars {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-500px, -500px); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
